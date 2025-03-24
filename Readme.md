@@ -10,3 +10,4 @@ Good luck!
 
 ## Task 1
 -Add unit tests for fetching people data, add axios package
+-Add unit tests for /people endpoint
