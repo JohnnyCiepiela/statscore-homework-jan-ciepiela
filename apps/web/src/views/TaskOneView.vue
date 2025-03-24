@@ -2,25 +2,52 @@
   <div class="task">
     <div class="task-description">
       <h2>Task 1</h2>
-      <div>
-        <p>
-          Write a Vue.js component that displays a list of items. The list should be displayed as a table with columns
-          for name, age, and email. The component should accept an array of objects as a prop, where each object
-          represents a person. The component should display each person as a row in the table.
-        </p>
-        <p>Data should be received from the backend.</p>
-        <p>For example, given the following array of objects:</p>
-        <pre>
-          [
-          { name: 'Alice', age: 25 }
-          { name: 'Bob', age: 30 }
-          { name: 'Charlie', age: 35 }
-          ]
-        </pre>
-      </div>
+      <p>This page displays a list of people in a table, fetched from the backend.</p>
     </div>
-    <div id="solution-1"></div>
+
+    <div id="solution-1">
+      <table v-if="people.length" border="1">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="person in people" :key="person.email">
+          <td>{{ person.name }}</td>
+          <td>{{ person.age }}</td>
+          <td>{{ person.email }}</td>
+        </tr>
+        </tbody>
+      </table>
+      <p v-else>Loading...</p>
+    </div>
   </div>
 </template>
 
-<style lang="css" scoped></style>
+<script>
+import axios from 'axios'
+
+export default {
+  data() {
+    return {
+      people: []
+    }
+  },
+  methods: {
+    async fetchPeople() {
+      try {
+        const response = await axios.get('http://localhost:8080/people')
+        this.people = response.data
+      } catch (error) {
+        console.error('Error fetching people:', error)
+      }
+    }
+  },
+  mounted() {
+    this.fetchPeople()
+  }
+}
+</script>
