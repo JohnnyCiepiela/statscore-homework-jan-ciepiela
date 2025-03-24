@@ -1,17 +1,20 @@
 ## Task 1
-### Faza Red
+### Red Phase
 - Added unit tests, which test fetching data about people, added tests for /people endpoint
 
-### Faza Green
+### Green Phase
 - Implemented functionality for fetching people data and displaying it in TaskOneView.vue component + fixed CORS issue
 
 ## Task 2
 
-### Faza Green
+### Green Phase
 - Implemented proper styling to recreate the image provided
 
 ## Task 3
 
-### Faza Red
+### Red Phase
 - Added unit tests for both frontend and backend for displaying current time
+
+### Green Phase
+- Implemented functionality for displaying current time so that the tests pass
 

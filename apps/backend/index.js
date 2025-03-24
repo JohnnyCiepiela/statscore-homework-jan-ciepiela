@@ -21,6 +21,9 @@ server.get('/people', async (request, reply) => {
         { name: 'Jan', age: 24, email: 'johnnyciepiela@gmail.com' }
     ];
 });
+server.get('/time', async (request, reply) => {
+    return { time: new Date().toLocaleTimeString() };
+});
 server.listen({ port: 8080 }, (err, address) => {
     if (err) {
         console.error(err);

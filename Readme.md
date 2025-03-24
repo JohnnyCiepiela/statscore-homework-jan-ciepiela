@@ -22,3 +22,4 @@ Sincere apologies for the inconvenience.
 
 ## Task 3
 -Add unit tests for both frontend and backend for displaying current time
+-Implement functionality for displaying current time 

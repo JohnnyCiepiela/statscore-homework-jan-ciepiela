@@ -21,6 +21,10 @@ server.get('/people', async (request, reply) => {
   ]
 })
 
+server.get('/time', async (request, reply) => {
+  return { time: new Date().toLocaleTimeString() }
+})
+
 server.listen({ port: 8080 }, (err, address) => {
   if (err) {
     console.error(err)
