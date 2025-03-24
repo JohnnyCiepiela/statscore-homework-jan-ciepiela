@@ -10,9 +10,12 @@ Good luck!
 
 ## Attention
 In my IntelliJ setup there seems to be an issue with running tests with "npm run test:unit", I hope with VSCode and Volar it will work but in case it does not, please try running each test suite separately.
-Apologies for the inconvenience.
+Sincere apologies for the inconvenience.
 
 ## Task 1
 -Add unit tests for fetching people data, add axios package
 -Add unit tests for /people endpoint
 -Implement functionality for fetching people data and fix CORS issue
+
+## Task 2
+-Implement proper styling to recreate the image provided

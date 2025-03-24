@@ -4,3 +4,9 @@
 
 ### Faza Green
 - Implemented functionality for fetching people data and displaying it in TaskOneView.vue component + fixed CORS issue
+
+## Task 2
+
+### Faza Green
+- Implemented proper styling to recreate the image provided
+
