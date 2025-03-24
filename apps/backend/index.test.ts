@@ -1,7 +1,13 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import fastify from 'fastify';
+import cors from '@fastify/cors';
 
 const server = fastify();
+
+server.register(cors, {
+  origin: '*',
+  methods: ['GET'],
+});
 
 server.get('/ping', async () => {
   return 'pong\n';
@@ -14,6 +20,10 @@ server.get('/people', async () => {
     { name: 'Charlie', age: 35, email: 'charlie@example.com' },
     { name: 'Jan', age: 24, email: 'johnnyciepiela@gmail.com' },
   ];
+});
+
+server.get('/time', async () => {
+  return { time: new Date().toLocaleTimeString() };
 });
 
 beforeAll(async () => {
@@ -50,5 +60,13 @@ describe('Fastify Server API Endpoints', () => {
     expect(alice).toBeDefined();
     expect(alice.age).toBe(24);
     expect(alice.email).toBe('johnnyciepiela@gmail.com');
+  });
+
+  it('should return a time object from /time', async () => {
+    const response = await server.inject({ method: 'GET', url: '/time' });
+    expect(response.statusCode).toBe(200);
+    const json = JSON.parse(response.body);
+    expect(json).toHaveProperty('time');
+    expect(typeof json.time).toBe('string');
   });
 });

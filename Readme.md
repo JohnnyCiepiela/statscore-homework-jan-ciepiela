@@ -19,3 +19,6 @@ Sincere apologies for the inconvenience.
 
 ## Task 2
 -Implement proper styling to recreate the image provided
+
+## Task 3
+-Add unit tests for both frontend and backend for displaying current time

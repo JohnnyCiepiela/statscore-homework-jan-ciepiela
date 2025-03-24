@@ -10,3 +10,8 @@
 ### Faza Green
 - Implemented proper styling to recreate the image provided
 
+## Task 3
+
+### Faza Red
+- Added unit tests for both frontend and backend for displaying current time
+
